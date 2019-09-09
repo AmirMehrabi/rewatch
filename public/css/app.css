@@ -1,3 +1,63 @@
+@font-face {
+  font-family: IRANSans;
+
+  font-style: normal;
+
+  font-weight: bold;
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Bold.eot");
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb(NoEn)_Bold.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb(NoEn)_Bold.woff") format("woff"), url("../fonts/ttf/IRANSansWeb(NoEn)_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Medium.eot");
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb(NoEn)_Medium.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb(NoEn)_Medium.woff") format("woff"), url("../fonts/ttf/IRANSansWeb(NoEn)_Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans;
+
+  font-style: normal;
+
+  font-weight: 300;
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Light.eot");
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb(NoEn)_Light.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb(NoEn)_Light.woff") format("woff"), url("../fonts/ttf/IRANSansWeb(NoEn)_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans;
+
+  font-style: normal;
+
+  font-weight: 200;
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_UltraLight.eot");
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn)_UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb(NoEn)_UltraLight.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb(NoEn)_UltraLight.woff") format("woff"), url("../fonts/ttf/IRANSansWeb(NoEn)_UltraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans;
+
+  font-style: normal;
+
+  font-weight: normal;
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn).eot");
+
+  src: url("../fonts/eot/IRANSansWeb(NoEn).eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb(NoEn).woff2") format("woff2"), url("../fonts/woff/IRANSansWeb(NoEn).woff") format("woff"), url("../fonts/ttf/IRANSansWeb(NoEn).ttf") format("truetype");
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -629,6 +689,120 @@ video {
   .container {
     max-width: 1280px;
   }
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: IRANSans;
+  direction: rtl;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: IRANSans;
+}
+
+.irsans {
+  font-family: IRANSans;
+}
+
+/* 
+.city-card {
+    will-change: transition;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: height 0.2s ease;
+    transition: height 2s ease;
+    transition-property: height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.city-name {
+    height: 0px;
+    display: none;
+    will-change: transition;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: height 0.2s ease;
+    transition: height 2s ease;
+    transition-property: height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.city-card:hover .city-name {
+    height: 34px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 10px 0 10px;
+    background: #fff;
+    z-index: 2;
+    transition: height 2s ease;
+    transition-property: height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+
+}
+
+*/
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Safari prior 6.1 */
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.btn-city {
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.city-card {
+  position: relative;
+  text-align: center;
+  color: white;
+  /* Safari prior 6.1 */
+  transition: all 0.4s;
+}
+
+.city-card:hover .centered {
+  font-size: 1.875rem;
+  /* Safari prior 6.1 */
+  transition: all 0.4s;
+  opacity: 1;
+}
+
+.city-card:hover .city-image {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  transition: all 0.1s;
+}
+
+.city-card:hover .btn-city {
+  opacity: 1;
+  transition: all 0.4s;
+}
+
+.city-header {
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .sr-only {
