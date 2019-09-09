@@ -68,8 +68,6 @@
         </div>
     </nav>
     <div class="container mx-auto px-10 md:px-4">
-
-
         <div class="px-2">
             <div class="flex flex-wrap -mx-2">
                 <!-- <div class="w-full md:w-1/2  lg:w-1/3 xl:w-1/4 md:mb-5 px-2 mb-4 ">
@@ -203,6 +201,5 @@
                 <!-- Birthday boy! -->
             </div>
         </div>
-    </div>
     </div>
 @endsection
