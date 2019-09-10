@@ -6,16 +6,19 @@ use App\AuthenticatesUser;
 use App\LoginToken;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 
 class LoginController extends Controller
 {
 
     protected $auth;
+    protected $redirectTo = '/';
 
     public function __construct(AuthenticatesUser $auth)
     {
         $this->auth = $auth;
+        $this->middleware('guest', ['except' => 'logout']);
     }
     public function login()
     {
@@ -26,25 +29,39 @@ class LoginController extends Controller
     {
         $this->auth->invite();
 
-        return view('auth.confirm');
+        return redirect(route('confirm'));
     }
 
     public function confirm()
     {
-        return view('confirm');
+        return view('auth.confirm');
     }
 
     public function authenticate(LoginToken $token)
     {
         // dd($token->user);
+
         $this->auth->login($token);
     }
 
     public function postAuthenticate(Request $request)
     {
-        $token = request()->get('token');
-        return $token;
-        // Auth::login($token->user);
-        // $token->delete();
+
+        $token = LoginToken::where('token', request()->get('token'))->first();
+        if (!is_null($token)) {
+            Auth::login($token->user);
+            $token->delete();
+            return redirect('/');
+        } else {
+            $request->session()->flash('error', 'کد وارد شده صحیح نیست');
+            return redirect(route('confirm'));
+        }
+    }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
