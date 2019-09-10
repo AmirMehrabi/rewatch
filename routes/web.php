@@ -1,6 +1,5 @@
 <?php
 
-use Kavenegar;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,12 +45,14 @@ Route::get('/profile', function () {
 });
 
 
-Route::get('/login', function () {
-    return view('login');
-});
 
 // Auth::routes();
 
 Route::get('login', 'Auth\LoginController@login');
+
+Route::post('login', 'Auth\LoginController@postLogin');
+
+Route::get('/auth/token/{token}', 'Auth\LoginController@authenticate');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
