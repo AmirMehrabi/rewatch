@@ -15,6 +15,12 @@
                         <p class="text-lg">تائیدیه</p>
                         <p class="text-xs text-gray-500">کد تائید پیامک شده به تلفن همراهتان را وارد کنید</p>
                     </div>
+                    @if (session()->has('error'))
+                        <div class="bg-red-100 mb-4 border border-red-400 irsans text-xs text-red-700 px-3 py-2 rounded relative" role="alert">
+                            <strong class="font-bold">متاًسفیم</strong>
+                            <span class="block sm:inline">کد وارد شده اشتباه است.</span>
+                        </div>                        
+                    @endif
 
 
                     <div class="mb-4">
@@ -23,6 +29,7 @@
                                 text-gray-700 leading-tight irsans focus:outline-none focus:bg-white focus:border-blue-500"
                             id="username" name="token" type="text" placeholder="مثال: 27394">
                     </div>
+
 
                     <div class="flex items-center justify-between">
                         <button
