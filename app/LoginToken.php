@@ -3,16 +3,25 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Mail;
+
 
 class LoginToken extends Model
 {
 
     protected $guarded = [];
+
+    public function getRouteKeyName()
+    {
+        return 'token';
+    }
+
+
     public static function generateFor(user $user)
     {
         return static::create([
             'user_id' => $user->id,
-            'token' => str_random(5)
+            'token' => mt_rand(10000, 99999)
         ]);
     }
 

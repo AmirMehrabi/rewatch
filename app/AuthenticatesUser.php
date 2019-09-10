@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use Auth;
 
 class AuthenticatesUser
 {
@@ -19,15 +20,21 @@ class AuthenticatesUser
     public function invite()
     {
         $this->validateRequest()
-            ->createToken();
-        // ->send();
+            ->createToken()
+            ->send();
+    }
+
+    public function login(LoginToken $token)
+    {
+        Auth::login($token->user);
+        $token->delete();
     }
 
     protected function validateRequest()
     {
         $this->validate($this->request, [
             // 'phone' => 'required|unique:users|regex:/(0)?9\d{9}/'
-            'phone' => 'required|unique:users|numeric|size:11'
+            'phone' => 'required|exists:users'
         ]);
 
         return $this;

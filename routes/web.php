@@ -52,7 +52,11 @@ Route::get('login', 'Auth\LoginController@login');
 
 Route::post('login', 'Auth\LoginController@postLogin');
 
+Route::get('confirm', 'Auth\LoginController@confirm')->name('confirm');
+
 Route::get('/auth/token/{token}', 'Auth\LoginController@authenticate');
+
+Route::post('/auth/token/', 'Auth\LoginController@postAuthenticate')->name('postAuthenticate');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
