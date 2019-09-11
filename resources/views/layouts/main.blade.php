@@ -23,7 +23,7 @@
                 <path
                     d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
             </svg>
-            <span class="font-semibold text-xl tracking-tight mr-2">یادکرد</span>
+            <span class="font-semibold text-xl tracking-tight mr-2">کوک</span>
         </div>
         <div class="block md:hidden">
             <button
@@ -53,10 +53,24 @@
                     پیشنهاد شهر
                 </a> -->
             </div>
+            @if (Auth::check())
+
+            <div class="group">
+                <a href="/login"
+                    class="hidden  md:flex items-center text-sm px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/avatars/1.jpg')}}" class="w-8 h-8 flex rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
+                
+                </a>
+            </div>    
             <div>
-                <a href="#"
+                <a href="/logout"
+                    class="hidden md:inline-block text-sm px-4 py-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">خروج</a>
+            </div>     
+                @else 
+            <div>
+                <a href="/login"
                     class="hidden md:inline-block text-sm px-4 py-2 leading-none border rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">ورود</a>
-            </div>
+            </div>                
+            @endif
         </div>
     </nav>
 

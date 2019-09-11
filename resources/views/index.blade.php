@@ -86,6 +86,7 @@
                         </div>
                     </div>
                 </div> -->
+                @foreach ($birthdays as $birthday)
                 <!-- Birthday Card -->
                 <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 md:mb-5 px-2 mb-4 ">
                     <div class="bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col">
@@ -94,12 +95,14 @@
                         </div>
                         <div class="text-gray-700 text-center  px-4">
                             <img src="images/avatars/1.jpg" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto" alt="">
-                            <p class="text-sm md:text-base md:text-lg font-medium text-black p-2 pb-1">امیر مهرابیان</p>
-                            <p class="text-xs sm:text-sm md:text-base pb-2">هجدهم شهریور ۱۳۷۴</p>
+                        <p class="text-sm md:text-base md:text-lg font-medium text-black p-2 pb-1">{{ $birthday->name}}</p>
+                            <p class="text-xs sm:text-sm md:text-base font-light pb-2">{{ \Morilog\Jalali\Jalalian::forge($birthday->birthday_date)->format('%d %B %Y') }}</p>
                         </div>
                     </div>
                 </div>
-                <!-- End of Birthday Card -->
+                <!-- End of Birthday Card -->                    
+                @endforeach
+
 
                 <!-- Birthday Card -->
                 <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 md:mb-5 px-2 mb-4 ">
