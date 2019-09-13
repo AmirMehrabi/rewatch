@@ -116,8 +116,10 @@ class BirthdayController extends Controller
      * @param  \App\Birthday  $birthday
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Birthday $birthday)
+    public function destroy(Request $request, Birthday $birthday)
     {
-        //
+        $birthday->delete();
+        $request->session()->flash('status', 'تولد مورد نظر شما با موفقیت حذف شد');
+        return redirect()->back();
     }
 }

@@ -18,6 +18,20 @@
 
                 {!! Form::open(['route' => 'birthday.store', 'method' => 'post']) !!}
                 @csrf
+                @error('name')
+                    <div class="mb-4">
+                        <span class="invalid-feedback text-sm mb-4 irsans text-red-700" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    </div>
+                @enderror
+                @error('birthday_date')
+                    <div class="mb-4">
+                        <span class="invalid-feedback text-sm mb-4 irsans text-red-700" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    </div>
+                @enderror
                 <div
                     class="flex shadow-xl py-1 sm:py-3 md:py-4 items-center bg-white rounded-lg appearance-none border border-gray-200 mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
                     <input
@@ -88,13 +102,17 @@
                 @foreach ($birthdays as $birthday)
                 <!-- Birthday Card -->
 
-                <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
+                <div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
                     <div
                         class="group bg-indigo-100 hover:bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col pb-4">
                         <div class="text-gray-700 text-center  p-2 pb-0 text-right flex">
                             <a href="#modal-{{$loop->index}}"
-                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1"><i
+                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1 transition-0"><i
                                     class="fas fa-ellipsis-h "></i></a>
+                            <a href="#modal-delete-{{$loop->index}}"
+                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-red-500 rounded-full p-1 transition-0">
+                            <i class="fas fa-trash"></i>
+                            </a>
                             <p>&nbsp</p>
                         </div>
                         <div class="text-gray-700 text-center  px-4">
@@ -114,7 +132,41 @@
                 <!-- End of Birthday Card -->
 
 
+                {{-- Birthday Delete Modal --}}
+                <section class="modal--show" id="modal-delete-{{$loop->index}}" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+                    aria-hidden="true">
 
+                    <div class="modal-inner">
+                        <header id="modal-label">
+                            <!-- Header -->
+                        <h1 class="text-xl">حذف تولد {{ $birthday->name}}</h1>
+                        </header>
+                        <div class="modal-content">
+                            <div class="d-flex w-full md:w-2/3 mx-auto">
+                                {!! Form::open(['route' => ['birthday.destroy', $birthday->id], 'method' => 'delete']) !!}
+                                @csrf
+                                <h4 class="my-6">آیا از حذف تولد {{$birthday->name }} اطمینان دارید؟</h4>
+                                <div class="flex">
+                                    <a href="#!"   data-close="بستن" data-dismiss="modal"
+                                        class="mr-auto text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
+                                        خیر، انصراف</a>
+
+                                <button type="submit"
+                                        class="text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-green-600 hover:bg-green-500 border-transparent hover:border-green-500 border-4 text-white py-1 px-2 rounded">
+                                        بله، مطمئنم
+                                    </button>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                        <footer>
+                            <!-- Footer -->
+                        </footer>
+                    </div>
+
+                    <a href="#!" class="modal-close" title="بستن این پنجره">?</a>
+                </section>
+                {{-- Birthday Delete Modal --}}
 
 
                 {{-- Birthday Modal --}}
@@ -148,7 +200,7 @@
                         </footer>
                     </div>
 
-                    <a href="#!" class="modal-close" title="بستن این پنجره" data-close="Close" data-dismiss="modal">?</a>
+                    <a href="#!" class="modal-close" title="بستن این پنجره" data-close="بستن" data-dismiss="modal">?</a>
                 </section>
                 {{-- Birthday Modal --}}
 
@@ -192,8 +244,51 @@
 
 
 
+{{-- Add Birthday Modal --}}
 
+<section class="modal--show" id="modal-birthday" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+    aria-hidden="true">
 
+    <div class="modal-inner">
+        <header id="modal-label">
+            <h1 class="text-xl">ثبت تولد جدید</h1>
+        </header>
+        <div class="modal-content">
+            <div class="d-flex flex-column w-full mx-auto">
+                {!! Form::open(['route' => 'birthday.store', 'method' => 'post']) !!}
+                @csrf
+                <div
+                    class="flex flex-col">
+                    <input
+                        class="shadow py-2 sm:py-3 items-center bg-gray-200 rounded-lg appearance-none border border-transparent mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
+                    <input
+                        class="shadow py-2 sm:py-3 items-center bg-gray-200 rounded-lg appearance-none border border-transparent mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500  main-input date_input"
+                        id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴"
+                        aria-label="Full name">
+                    @if (Auth::check())
+                    <button type="submit"
+                        class="text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
+                        ذخیره
+                    </button>
+                    @else
+                    <a href="#modal-login"
+                        class="text-base flex-shrink-0 irsans py-2 md:py-3 px-4 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 border-4 text-white py-1 px-2 rounded">ورود</a>
+                    @endif
+
+                </div>
+                {!! Form::close() !!}
+
+            </div>
+        </div>
+        <footer>
+            <!-- Footer -->
+        </footer>
+    </div>
+
+    <a href="#!" class="modal-close" title="بستن این پنجره" data-close="بستن" data-dismiss="modal">?</a>
+</section>
+{{-- End of add birthday modal --}}
 
 
 
@@ -220,7 +315,6 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 </div>
-
                 @enderror
                 <div class="mb-4">
                     <input
@@ -245,7 +339,7 @@
         </footer>
     </div>
 
-    <a href="#!" class="modal-close" title="بستن این پنجره" data-close="Close" data-dismiss="modal">?</a>
+    <a href="#!" class="modal-close" title="بستن این پنجره" data-close="بستن" data-dismiss="modal">?</a>
 </section>
 
 
