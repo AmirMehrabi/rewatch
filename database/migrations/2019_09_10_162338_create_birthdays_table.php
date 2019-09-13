@@ -14,6 +14,7 @@ class CreateBirthdaysTable extends Migration
     public function up()
     {
         Schema::create('birthdays', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('user_id');
             $table->text('name');
             $table->text('relation')->nullable();

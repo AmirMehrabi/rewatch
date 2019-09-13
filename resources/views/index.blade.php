@@ -90,21 +90,24 @@
 
                 <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
                     <div
-                        class="group bg-indigo-100 hover:bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col">
-                        <div class="text-gray-700 text-center  p-2 text-right flex">
+                        class="group bg-indigo-100 hover:bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col pb-4">
+                        <div class="text-gray-700 text-center  p-2 pb-0 text-right flex">
                             <a href="#modal-{{$loop->index}}"
                                 class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1"><i
                                     class="fas fa-ellipsis-h "></i></a>
                             <p>&nbsp</p>
                         </div>
                         <div class="text-gray-700 text-center  px-4">
-                            <img src="images/avatars/1.jpg"
+                            {{-- <img src="images/avatars/1.jpg"
                                 class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
-                                alt="">
-                            <p class="text-sm md:text-base xl:text-lg font-medium text-black p-2 pb-1">
+                                alt=""> --}}
+                                
+                            <p class="text-sm mb-1 md:text-base xl:text-lg font-medium text-black">
                                 {{ $birthday->name}}</p>
-                            <p class="text-xs sm:text-sm md:text-base font-light pb-2">
+                            <p class="text-xs sm:text-sm mb-1 lg:text-base">{{$birthday->countdays($birthday->birthday_date)}} روز مانده تا تولد بعدی</p>
+                            <p class="text-xs sm:text-sm mb-1 md:text-base font-light pb-2">
                                 {{ \Morilog\Jalali\Jalalian::forge($birthday->birthday_date)->format('%d %B %Y') }}</p>
+                                
                         </div>
                     </div>
                 </div>
@@ -125,14 +128,14 @@
                         </header>
                         <div class="modal-content">
                             <div class="d-flex flex-column w-full md:w-2/3 mx-auto">
-                                {!! Form::model($birthday, ['route' => ['birthday.update', $birthday->id], 'method' => 'put']) !!}
+                                {!! Form::open(['route' => ['birthday.update', $birthday->id], 'method' => 'put']) !!}
                                 @csrf
-                                <input
-                                    class="text-xs mb-6 w-full  mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                                    type="text" name="name" placeholder="امیر مهرابیان ..." value="{{$birthday->name}}" aria-label="Full name">
+                                
+                                <input value="{{ $birthday->name }}" class="text-xs mb-6 w-full  mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+                                    type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
                                 <input
                                     class="text-xs mb-6 w-2/3 mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500  main-input date_input"
-                                    id="date_input" type="text" name="birthday_date" value="{{$birthday->birthday_date}}" placeholder="۱۸/۰۶/۱۳۷۴" aria-label="Full name">
+                                    value="{{ $birthday->birthday_date }}" id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴" aria-label="Full name">
                                 <button type="submit"
                                     class="text-xs mb-6 w-full shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
                                     ذخیره
@@ -151,36 +154,6 @@
 
                 @endforeach
 
-                <!-- Birthday Card -->
-                <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 ">
-                    <div
-                        class="group bg-white  rounded-lg  p-1 shadow lg:shadow-none hover:shadow-2xl city-card flex flex-col">
-                        <div class="text-gray-700 text-center  p-2 text-right flex">
-                            <a href="#"
-                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1"><i
-                                    class="fas fa-ellipsis-h "></i></a>
-                            <p>&nbsp</p>
-                        </div>
-                        <div class="text-gray-700 text-center  px-4">
-                            <img src="images/avatars/1.jpg"
-                                class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
-                                alt="">
-                            <p class="text-sm md:text-base md:text-lg font-medium text-black p-2 pb-1">امیر مهرابیان</p>
-                            <p class="text-xs sm:text-sm md:text-base pb-2">هجدهم شهریور ۱۳۷۴</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Birthday Card -->
-
-
-
-
-
-
-
-
-
-
             </div>
 
             {{-- Birthday boy flex row --}}
@@ -195,7 +168,6 @@
                                     <!-- <div class="text-right">
                                         <a href="#" class="text-white text-right hover:text-yellow-500 rounded-full"><i class="fas fa-ellipsis-h"></i></a>
                                     </div> -->
-
 
                                     <img src="images/avatars/1.jpg"
                                         class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
@@ -223,12 +195,6 @@
 
 
 
-
-
-<modal name="login-modal" :delay="100"
-    classes="flex p-4 float-left bg-white rounded-lg shadow-2xl w-2/3 sm:w-1/3 lg:w-1/4 p-2 mx-auto">
-
-</modal>
 
 
 <section class="modal--show" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-label"

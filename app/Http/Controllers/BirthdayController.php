@@ -55,8 +55,8 @@ class BirthdayController extends Controller
         $birthday->name = $request->input('name');
         $birthday->birthday_date = $carbon_birth_date;
         $birthday->save();
-        return $birthday;
-
+        $request->session()->flash('status', 'تولد مورد نظر، با موفقیت به پروفایل شما افزوده شد');
+        return redirect()->back();
     }
 
     /**
@@ -90,24 +90,24 @@ class BirthdayController extends Controller
      */
     public function update(Request $request, Birthday $birthday)
     {
-
         $request->validate([
             'name' => 'required',
             'birthday_date' => 'required',
         ]);
         $dateString = \Morilog\Jalali\CalendarUtils::convertNumbers($request->input('birthday_date'), true);
+        //$Jalalian = jdate($dateString)->format('date');
 
         $carbon_birth_date = \Morilog\Jalali\CalendarUtils::createCarbonFromFormat('Y/m/d', $dateString);
-        // $birthday = Birthday::where('id', $id)->firstOrFail();
+        // $birthday = Birthday::where('id', $request->input('id'))->firstOrFail();
         $birthday->name = $request->input('name');
         $birthday->birthday_date = $carbon_birth_date;
 
         $birthday->save();
 
-        return $birthday;
+        // return $birthday;
 
         $request->session()->flash('status', 'تولد مورد نظر، با موفقیت به پروفایل شما افزوده شد');
-        return Redirect::back();
+        return redirect()->back();
     }
 
     /**

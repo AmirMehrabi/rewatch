@@ -41,8 +41,4 @@ Route::post('/auth/token/', 'Auth\LoginController@postAuthenticate')->name('post
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('birthday', 'BirthdayController')->names([
-    'store' => 'birthday.store',
-    'update' => 'birthday.update',
-    'destroy' => 'birthday.destroy'
-]);
+Route::resource('birthday', 'BirthdayController');
