@@ -20,10 +20,13 @@ Route::get('/profile', function () {
 });
 
 
+Route::get('/test', function () {
+    return view('test');
+});
 
 // Auth::routes();
 
-Route::get('login', 'Auth\LoginController@login');
+Route::get('login', 'Auth\LoginController@login')->name('login');
 
 Route::post('login', 'Auth\LoginController@postLogin');
 
@@ -31,13 +34,12 @@ Route::get('login/confirm', 'Auth\LoginController@confirm')->name('confirm');
 
 Route::get('/auth/token/{token}', 'Auth\LoginController@authenticate');
 
-Route::get('logout', 'Auth\LoginController@logout');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::post('/auth/token/', 'Auth\LoginController@postAuthenticate')->name('postAuthenticate');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::resource('birthday', 'BirthdayController')->names([
     'store' => 'birthday.store',

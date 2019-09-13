@@ -28,14 +28,13 @@
                         <input
                             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4
                                 text-gray-700 leading-tight irsans focus:outline-none focus:bg-white focus:border-blue-500"
-                            id="username" name="phone" type="text" placeholder="مثال: ****0913195">
+                            id="phoneInput" name="phone" type="text" placeholder="مثال: ****0913195">
                     </div>
 
 
                     <div class="flex items-center justify-between">
                         <button
-                            class="bg-blue-500 mr-auto w-full rounded-full irsans border-2 border-blue-500 text-white font-bold py-2 px-4 rounded
-                                focus:outline-none focus:shadow-outline hover:bg-white hover:border-blue-600 hover:text-blue-600"
+                            class="bg-blue-500 mr-auto w-full rounded-full irsans text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-600 hover:text-white"
                             type="submit">
                             ورود
                         </button>

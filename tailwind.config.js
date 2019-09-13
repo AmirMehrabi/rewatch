@@ -3,7 +3,9 @@ module.exports = {
         extend: {}
     },
     variants: {
-        borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
+        borderColor: ['responsive', 'group-hover', 'focus-within', 'first', 'last', 'odd', 'even', 'hover', 'focus', 'active', 'visited', 'disabled'],
+        display: ['responsive', 'group-hover', 'focus-within', 'first', 'last', 'odd', 'even', 'hover', 'focus', 'active', 'visited', 'disabled'],
+        textColor: ['responsive', 'group-hover', 'focus-within', 'first', 'last', 'odd', 'even', 'hover', 'focus', 'active', 'visited', 'disabled']
     },
     plugins: []
 }

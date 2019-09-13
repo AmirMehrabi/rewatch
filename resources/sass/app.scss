@@ -1,200 +1,199 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: bold;
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Bold.eot');
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Bold.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'),
         /* IE6-8 */
-        url('../fonts/woff2/IRANSansWeb(NoEn)_Bold.woff2') format('woff2'),
+        url('../fonts/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'),
         /* FF39+,Chrome36+, Opera24+*/
-        url('../fonts/woff/IRANSansWeb(NoEn)_Bold.woff') format('woff'),
+        url('../fonts/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'),
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-        url('../fonts/ttf/IRANSansWeb(NoEn)_Bold.ttf') format('truetype');
+        url('../fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 500;
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Medium.eot');
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Medium.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'),
         /* IE6-8 */
-        url('../fonts/woff2/IRANSansWeb(NoEn)_Medium.woff2') format('woff2'),
+        url('../fonts/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'),
         /* FF39+,Chrome36+, Opera24+*/
-        url('../fonts/woff/IRANSansWeb(NoEn)_Medium.woff') format('woff'),
+        url('../fonts/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'),
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-        url('../fonts/ttf/IRANSansWeb(NoEn)_Medium.ttf') format('truetype');
+        url('../fonts/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 300;
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Light.eot');
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_Light.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Light.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'),
         /* IE6-8 */
-        url('../fonts/woff2/IRANSansWeb(NoEn)_Light.woff2') format('woff2'),
+        url('../fonts/woff2/IRANSansWeb(FaNum)_Light.woff2') format('woff2'),
         /* FF39+,Chrome36+, Opera24+*/
-        url('../fonts/woff/IRANSansWeb(NoEn)_Light.woff') format('woff'),
+        url('../fonts/woff/IRANSansWeb(FaNum)_Light.woff') format('woff'),
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-        url('../fonts/ttf/IRANSansWeb(NoEn)_Light.ttf') format('truetype');
+        url('../fonts/ttf/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 200;
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_UltraLight.eot');
-    src: url('../fonts/eot/IRANSansWeb(NoEn)_UltraLight.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'),
         /* IE6-8 */
-        url('../fonts/woff2/IRANSansWeb(NoEn)_UltraLight.woff2') format('woff2'),
+        url('../fonts/woff2/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'),
         /* FF39+,Chrome36+, Opera24+*/
-        url('../fonts/woff/IRANSansWeb(NoEn)_UltraLight.woff') format('woff'),
+        url('../fonts/woff/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'),
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-        url('../fonts/ttf/IRANSansWeb(NoEn)_UltraLight.ttf') format('truetype');
+        url('../fonts/ttf/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/eot/IRANSansWeb(NoEn).eot');
-    src: url('../fonts/eot/IRANSansWeb(NoEn).eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/eot/IRANSansWeb(FaNum).eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
         /* IE6-8 */
-        url('../fonts/woff2/IRANSansWeb(NoEn).woff2') format('woff2'),
+        url('../fonts/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
         /* FF39+,Chrome36+, Opera24+*/
-        url('../fonts/woff/IRANSansWeb(NoEn).woff') format('woff'),
+        url('../fonts/woff/IRANSansWeb(FaNum).woff') format('woff'),
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-        url('../fonts/ttf/IRANSansWeb(NoEn).ttf') format('truetype');
+        url('../fonts/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
 }
 
 @tailwind base;
 
 @tailwind components;
 
+// Variables
+
+* {
+    transition: all 0.2s;
+}
 
 body {
-    background-color: #f4f4f4;
-    font-family: IRANSans;
     direction: rtl;
+    font-family: 'IRANSans' !IMPORTANT;
 }
 
-p,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: IRANSans;
-}
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
 
-.irsans {
-    font-family: IRANSans;
-}
-
-/* 
-.city-card {
-    will-change: transition;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transition: height 0.2s ease;
-    transition: height 2s ease;
-    transition-property: height;
-    transition-duration: 2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-}
-
-.city-name {
-    height: 0px;
-    display: none;
-    will-change: transition;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transition: height 0.2s ease;
-    transition: height 2s ease;
-    transition-property: height;
-    transition-duration: 2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-}
-
-.city-card:hover .city-name {
-    height: 34px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 10px 10px 0 10px;
-    background: #fff;
-    z-index: 2;
-    transition: height 2s ease;
-    transition-property: height;
-    transition-duration: 2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-
-}
-
-*/
-
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transition: all 0.4s;
-    /* Safari prior 6.1 */
-    transition: all 0.4s;
-    opacity: 0;
-}
-
-.city-image {}
-
-.btn-city {
-    opacity: 0;
-    transition: all 0.4s;
-}
-
-.city-card {
-    position: relative;
-    text-align: center;
-    color: white;
-    -webkit-transition: all 0.4s;
-    /* Safari prior 6.1 */
-    transition: all 0.4s;
-}
-
-.city-card:hover .centered {
-    @apply text-3xl;
-    -webkit-transition: all 0.4s;
-    /* Safari prior 6.1 */
-    transition: all 0.4s;
-    opacity: 1;
-}
-
-.city-card:hover .city-image {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-    transition: all 0.1s;
-
-}
-
-.city-card:hover .btn-city {
-    opacity: 1;
-    transition: all 0.4s;
-
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 
-.city-header {
-    background-position: initial;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+@tailwind base;
 
+@tailwind components;
 
 @tailwind utilities;
+
+// Configuration variables
+@import 'modal-config';
+
+// Core operations
+@import 'modal-core';
+
+// Modal animations
+@import 'modal-animations';
+
+// Theme styles
+@import 'modal-theme';
+
+// Include the modal element with it's selector
+@import 'modal-element';
+
+.button {
+    @apply .text-white .no-underline .rounded-lg .text-sm .py-2 .px-5;
+    box-shadow: 0 2px 7px 0 #b0eaff;
+    background-color: #47cdff;
+
+    &.is-outlined {
+        @apply .bg-white .border .border-blue-400 .text-blue-400;
+    }
+}
+
+
+.irsans {
+    font-family: 'IRANSans';
+}
+
+.card {
+    @apply .bg-white .rounded-lg .shadow .p-5;
+}
+
+.current-day {
+    @apply .rounded .bg-blue-400 .text-white;
+}
+
+.calendar {
+    @apply .bg-white .rounded-lg .shadow .p-5;
+}
+
+.table-heading {
+    @apply .bg-yellow-400 .rounded-lg;
+}
+
+.table-heading-top {
+    @apply .bg-green-200 .rounded-lg;
+}
+
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links>a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.datepicker-plot-area {
+    font-family: IRANSans !IMPORTANT;
+}

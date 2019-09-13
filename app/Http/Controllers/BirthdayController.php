@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BirthdayController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,14 +41,22 @@ class BirthdayController extends Controller
      */
     public function store(Request $request)
     {
-        $carbon_birth_date = \Morilog\Jalali\CalendarUtils::createCarbonFromFormat('Y/m/d', $request->input('birthday_date'));
+        $request->validate([
+            'name' => 'required',
+            'birthday_date' => 'required',
+        ]);
+        $dateString = \Morilog\Jalali\CalendarUtils::convertNumbers($request->input('birthday_date'), true);
+        // $Jalalian = jdate($dateString)->format('date');
+        // return $dateString;
+        $carbon_birth_date = \Morilog\Jalali\CalendarUtils::createCarbonFromFormat('Y/m/d', $dateString);
+        //  return $carbon_birth_date;
         $birthday =  new Birthday;
         $birthday->user_id = auth()->user()->id;
         $birthday->name = $request->input('name');
         $birthday->birthday_date = $carbon_birth_date;
         $birthday->save();
+        return $birthday;
 
-        return redirect()->back();
     }
 
     /**
