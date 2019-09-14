@@ -17,7 +17,7 @@
                 <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
                     style="background-image: url('images/character.jpg')"></div>
 
-                <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{ $user->name ? $user->name :  'بدون نام' }} </h1>
+                <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{ $user->name ? $user->name :  'نامشخص' }} </h1>
                 <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
                 <p class="pt-4 text-base flex items-center justify-center lg:justify-start">
                     <i class="fas fa-calendar  text-blue-700 ml-2  "></i>
@@ -28,7 +28,7 @@
                     شماره‌ی همراه: {{$user->phone}}</p>
                 <p class="pt-4 text-base flex items-center justify-center lg:justify-start">
                     <i class="fas fa-calendar  text-blue-700 ml-2  "></i>
-                    آدرس ایمیل: aut0run2011@gmail.com</p>
+                    آدرس ایمیل: {{ $user->email ? $user->email :  'نامشخص' }}</p>
 
                 <!-- <p class="pt-8 text-sm">Totally optional short description about yourself, what you do and so on.</p> -->
 

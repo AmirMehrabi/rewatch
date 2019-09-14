@@ -22,15 +22,15 @@
     <div id="app">
             
         <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-3 irsans">
-            <div class="flex items-center flex-shrink-0 text-white mx-6">
-                <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54"
+            <div class="flex items-center flex-shrink-0 text-white sm:mx-1 md:mx-6">
+                <svg class="fill-current h-6 w-6 md:h-8 md:w-8 md:mr-2" width="54" height="54" viewBox="0 0 54 54"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
                 </svg>
-                <span class="font-semibold text-xl tracking-tight mr-2">کوک</span>
+                <span class="font-semibold text-base sm:text-lg md:text-xl tracking-tight mr-1 md:mr-2">کوک</span>
             </div>
-            <div class="block md:hidden">
+            <div class="hidden">
                 <button
                     class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -39,41 +39,30 @@
                     </svg>
                 </button>
             </div>
-            <div class="w-full block flex-grow md:flex md:items-center md:w-auto">
-                <div class="text-sm md:flex-grow">
-                    <!-- <a href="#responsive-header"
-                        class="block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
-                        بهترین 
+            <div class=" flex-grow flex items-center w-auto">
+                <div class="text-xs sm:text-sm flex-grow">
+                     <a href="/"
+                        class="inline-block py-1 px-2 text-blue-200 hover:text-white hover:bg-gray-900 rounded mr-2 md:mr-4">
+                        صفحه‌ی نخست 
                     </a>
-                    <a href="#responsive-header"
-                        class="block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
-                        لیست شهرها
-                    </a>
-                    <a href="#responsive-header"
-                        class="block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
-                        فودی‌ها
-                    </a>
-                    <a href="#responsive-header"
-                        class="block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
-                        پیشنهاد شهر
-                    </a> -->
+
                 </div>
                 @if (Auth::check())
 
                 <div class="group">
                     <a href="/profile"
-                        class="hidden  md:flex items-center text-sm px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/character.jpg')}}" class="w-8 h-8 flex rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
+                        class="flex items-center text-xs sm:text-sm px-1 sm:px-2 md:px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/character.jpg')}}" class="w-8 6 fl6 md:h-8 md:w-8x rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
                     
                     </a>
                 </div>    
                 <div>
                     <a href="/logout"
-                        class="hidden md:inline-block text-sm px-4 py-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">خروج</a>
+                        class="inline-block text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">خروج</a>
                 </div>     
                     @else 
                 <div>
                     <a href="/login"
-                        class="hidden md:inline-block text-sm px-4 py-2 leading-none border rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">ورود</a>
+                        class="inline-block text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none border rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">ورود</a>
                 </div>                
                 @endif
             </div>
@@ -86,6 +75,9 @@
 
 
 
+        <footer class="bg-gray-700 p-5 border-t shadow-xl text-white mt-20">
+            <p>آزاد و متن‌باز - توسعه داده شده با لاراول</p>
+        </footer>
 
         </div>
         <script src="{{asset('js/app.js')}}"></script>

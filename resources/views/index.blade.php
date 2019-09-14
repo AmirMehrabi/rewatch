@@ -1,10 +1,11 @@
 @extends('layouts.main')
 
-
+@section('title', 'صفحه‌ی نخست')
+    
 @section('content')
 
-<section class="bg-white">
-    <div class="container mx-2 md:mx-0">
+<section class="bg-blue-100">
+    <div class="container mx-auto">
 
         <div
             class="hidden lg:flex lg:flex-row w-full md:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
@@ -12,7 +13,7 @@
                 <div class="text-center">
                     <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-gray-700 font-semibold">
                         دیگر تولد دوستان و آشنایان خود را فراموش نکنید.
-                        <span class="text-xs sm:text-sm md:text-base font-light">روز قبل شما را مطلع خواهیم کرد.</span>
+                        <span class="text-xs sm:text-sm md:text-base font-light">ما شما را مطلع خواهیم کرد.</span>
                     </p>
                 </div>
 
@@ -60,33 +61,12 @@
     </div>
 </section>
 
-<nav class="flex items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
+<nav class="flex lg:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
     <div class="w-full  flex-grow flex items-center w-auto">
-        <div class="text-sm flex-grow">
-            <a href="#responsive-header"
-                class=" inline-block text-gray-900 bg-gray-100 px-1 sm:px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded rounded-lg hover:text-blue-500 hover:bg-blue-100">
-                دوستان
-            </a>
-            <a href="#responsive-header"
-                class=" inline-block text-gray-900 bg-gray-100 px-1 sm:px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded rounded-lg hover:text-blue-500 hover:bg-blue-100">
-                خانواده
-            </a>
-            <a href="#responsive-header"
-                class=" inline-block text-gray-900 bg-gray-100 px-1 sm:px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded rounded-lg hover:text-blue-500 hover:bg-blue-100">
-                همکاران
-            </a>
-            <a href="#responsive-header"
-                class=" inline-block text-gray-900 bg-gray-100 px-1 sm:px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded rounded-lg hover:text-blue-500 hover:bg-blue-100">
-                هم‌کلاسی‌ها
-            </a>
-            <a href="#responsive-header"
-                class=" inline-block text-gray-900 bg-gray-100 px-1 sm:px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded rounded-lg hover:text-blue-500 hover:bg-blue-100">
-                متفرقه
-            </a>
-        </div>
-        <div class="inline-block">
+
+        <div class="inline-block mr-auto">
             <a href="#modal-birthday"
-                class="inline-block lg:hidden text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
+                class=" text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
                     class="fas fa-plus    "></i> افزودن تولد</a>
         </div>
     </div>
@@ -208,6 +188,7 @@
 
             </div>
 
+            @if (!count($birthdays))
             {{-- Birthday boy flex row --}}
             <div class="flex flex-wrap -mx-2">
                 <!-- Birthday Boy! -->
@@ -216,19 +197,10 @@
 
                         <div class="text-white">
                             <div class="flex flex-row  items-center justify-center">
-                                <div class="text-white m-2 w-2/5 xl:w-auto">
-                                    <!-- <div class="text-right">
-                                        <a href="#" class="text-white text-right hover:text-yellow-500 rounded-full"><i class="fas fa-ellipsis-h"></i></a>
-                                    </div> -->
 
-                                    <img src="images/avatars/1.jpg"
-                                        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
-                                        alt="">
-                                    <p class="text-base pt-2">امیر مهرابیان</p>
-                                </div>
-                                <div class="text-white text-center m-2 w-3/5  xl:w-auto">
-                                    <h1 class="text-base sm:text-lg md:text-xl font-light text-white lg:text-right">تولد
-                                        امیر امروز در راه است. <span class="font-semibold">تبریک</span> فراموش نشود!
+                                <div class="text-white text-center m-2 w-4/5  xl:w-auto">
+                                    <h1 class="text-base sm:text-lg md:text-xl font-light text-white lg:text-right">
+                                    شما در حال حاضر تولد ثبت‌شده‌ای ندارید. برای ثبت تولد جدید <a href="{{Auth::check() ? '#modal-birthday' : '#modal-login'}}" class="text-sm px-2 leading-none  rounded bg-blue-100 border-transparent text-gray text-blue-400 border border-transparent hover:bg-blue-300 hover:text-white">اینجا</a> کلیک کنید.
                                     </h1>
                                 </div>
                             </div>
@@ -236,7 +208,9 @@
                     </div>
                 </div>
                 <!-- Birthday boy! -->
-            </div>
+            </div>                
+            @endif
+
         </div>
     </div>
 </section>
