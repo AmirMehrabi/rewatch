@@ -15,10 +15,9 @@
 Route::get('/', 'PagesController@index');
 
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', 'PagesController@profile')->middleware('auth');
 
+Route::post('/profile/update', 'PagesController@updateProfile')->middleware('auth')->name('profile.update');
 
 Route::get('/test', function () {
     return view('test');

@@ -61,8 +61,8 @@
                 @if (Auth::check())
 
                 <div class="group">
-                    <a href="/login"
-                        class="hidden  md:flex items-center text-sm px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/avatars/1.jpg')}}" class="w-8 h-8 flex rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
+                    <a href="/profile"
+                        class="hidden  md:flex items-center text-sm px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/character.jpg')}}" class="w-8 h-8 flex rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
                     
                     </a>
                 </div>    

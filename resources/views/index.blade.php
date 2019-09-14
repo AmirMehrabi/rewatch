@@ -86,7 +86,7 @@
         </div>
         <div class="inline-block">
             <a href="#modal-birthday"
-                class="inline-block text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
+                class="inline-block lg:hidden text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
                     class="fas fa-plus    "></i> افزودن تولد</a>
         </div>
     </div>

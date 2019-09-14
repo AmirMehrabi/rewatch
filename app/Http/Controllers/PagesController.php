@@ -29,4 +29,30 @@ class PagesController extends Controller
 
         return view('index', compact('birthdays'));
     }
+
+    public function profile() {
+        $user = auth()->user();
+        return view('profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request) {
+        $request->validate([
+            'name' => 'required',
+        ]);
+    
+        $user = auth()->user();
+        $user->name = request()->name;
+
+        $user->email = request()->email;
+
+        if (request()->has('birthday')) {
+        $dateString = \Morilog\Jalali\CalendarUtils::convertNumbers($request->input('birthday'), true);
+        $carbon_birth_date = \Morilog\Jalali\CalendarUtils::createCarbonFromFormat('Y/m/d', $dateString);
+        $user->birthday = $carbon_birth_date;
+
+        }
+        $user->save();
+
+        return redirect()->back();
+    }
 }
