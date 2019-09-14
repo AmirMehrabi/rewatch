@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'نمایه‌ی کاربری')
+
 
 @section('content')
 
