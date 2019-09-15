@@ -48,21 +48,24 @@
 
                 </div>
                 @if (Auth::check())
-
+                <div class="flex">
+                    <a href="#modal-birthday"
+                        class="flex text-xs sm:text-sm leading-none  sm:mx-2 rounded rounded-lg text-white hover:border-transparent hover:text-teal-500 px-1 py-2"><i class="fas fa-plus    "></i></a>
+                </div> 
                 <div class="group">
                     <a href="/profile"
-                        class="flex items-center text-xs sm:text-sm px-1 sm:px-2 md:px-4 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/character.jpg')}}" class="w-8 6 fl6 md:h-8 md:w-8x rounded-full ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
+                        class="flex items-center text-xs sm:text-sm px-1 sm:mx-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500"> <img src="{{asset('images/character.jpg')}}" class="w-8 6 fl6 md:h-8 md:w-8x rounded ml-1 border-2 group-hover:border-teal-500" alt=""> {{Auth::user()->name ? Auth::user()->name : 'پروفایل کاربری'}}
                     
                     </a>
                 </div>    
                 <div>
                     <a href="/logout"
-                        class="inline-block text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">خروج</a>
+                        class="flex text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">خروج</a>
                 </div>     
                     @else 
                 <div>
                     <a href="/login"
-                        class="inline-block text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none border rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">ورود</a>
+                        class="flex text-xs sm:text-sm px-1 sm:px-2 md:px-4 py-2 leading-none border rounded rounded-lg text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">ورود</a>
                 </div>                
                 @endif
             </div>
