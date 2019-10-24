@@ -6,13 +6,11 @@
 
 <section class="bg-blue-100">
     <div class="container mx-auto">
-
-        <div
-            class="hidden lg:flex lg:flex-row w-full md:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
+        <div class="hidden lg:flex lg:flex-row w-full md:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
             <div class="w-full mb-8">
                 <div class="text-center">
                     <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-gray-700 font-semibold">
-                        دیگر تولد دوستان و آشنایان خود را فراموش نکنید.
+                        دیگر سالگردهای مهم را فراموش نکنید.
                         <span class="text-xs sm:text-sm md:text-base font-light">ما شما را مطلع خواهیم کرد.</span>
                     </p>
                 </div>
@@ -67,7 +65,7 @@
         <div class="inline-block mr-auto">
             <a href="#modal-birthday"
                 class=" text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
-                    class="fas fa-plus    "></i> افزودن تولد</a>
+                    class="fas fa-plus    "></i> افزودن سالگرد</a>
         </div>
     </div>
 </nav>
@@ -102,7 +100,7 @@
                                 
                             <p class="text-sm mb-1 md:text-base xl:text-lg font-medium text-black">
                                 {{ $birthday->name}}</p>
-                            <p class="text-xs sm:text-sm mb-1 lg:text-base">{{$birthday->countdays($birthday->birthday_date)}} روز مانده تا تولد بعدی</p>
+                            <p class="text-xs sm:text-sm mb-1 lg:text-base">{{$birthday->countdays($birthday->birthday_date)}} روز مانده تا سال‌گرد بعدی</p>
                             <p class="text-xs sm:text-sm mb-1 md:text-base font-light pb-2">
                                 {{ \Morilog\Jalali\Jalalian::forge($birthday->birthday_date)->format('%d %B %Y') }}</p>
                                 
@@ -119,13 +117,13 @@
                     <div class="modal-inner">
                         <header id="modal-label">
                             <!-- Header -->
-                        <h1 class="text-xl">حذف تولد {{ $birthday->name}}</h1>
+                        <h1 class="text-xl">حذف سال‌گرد {{ $birthday->name}}</h1>
                         </header>
                         <div class="modal-content">
                             <div class="d-flex w-full md:w-2/3 mx-auto">
                                 {!! Form::open(['route' => ['birthday.destroy', $birthday->id], 'method' => 'delete']) !!}
                                 @csrf
-                                <h4 class="my-6">آیا از حذف تولد {{$birthday->name }} اطمینان دارید؟</h4>
+                                <h4 class="my-6">آیا از حذف سال‌گرد {{$birthday->name }} اطمینان دارید؟</h4>
                                 <div class="flex">
                                     <a href="#!"   data-close="بستن" data-dismiss="modal"
                                         class="mr-auto text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
@@ -156,7 +154,7 @@
                     <div class="modal-inner">
                         <header id="modal-label">
                             <!-- Header -->
-                        <h1 class="text-xl">ویرایش تولد {{ $birthday->name}}</h1>
+                        <h1 class="text-xl">ویرایش سال‌گرد {{ $birthday->name}}</h1>
                         </header>
                         <div class="modal-content">
                             <div class="d-flex flex-column w-full md:w-2/3 mx-auto">
@@ -200,7 +198,7 @@
 
                                 <div class="text-white text-center m-2 w-4/5  xl:w-auto">
                                     <h1 class="text-base sm:text-lg md:text-xl font-light text-white lg:text-right">
-                                    شما در حال حاضر تولد ثبت‌شده‌ای ندارید. برای ثبت تولد جدید <a href="{{Auth::check() ? '#modal-birthday' : '#modal-login'}}" class="text-sm px-2 leading-none  rounded bg-blue-100 border-transparent text-gray text-blue-400 border border-transparent hover:bg-blue-300 hover:text-white">اینجا</a> کلیک کنید.
+                                    شما در حال حاضر سال‌گرد ثبت‌شده‌ای ندارید. برای ثبت سال‌گرد جدید <a href="{{Auth::check() ? '#modal-birthday' : '#modal-login'}}" class="text-sm px-2 leading-none  rounded bg-blue-100 border-transparent text-gray text-blue-400 border border-transparent hover:bg-blue-300 hover:text-white">اینجا</a> کلیک کنید.
                                     </h1>
                                 </div>
                             </div>
@@ -225,7 +223,7 @@
 
     <div class="modal-inner">
         <header id="modal-label">
-            <h1 class="text-xl">ثبت تولد جدید</h1>
+            <h1 class="text-xl">ثبت سال‌گرد جدید</h1>
         </header>
         <div class="modal-content">
             <div class="d-flex flex-column w-full mx-auto">

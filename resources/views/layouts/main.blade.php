@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>کوک | @yield('title')</title>
+    <title>{{config('app.name')}} | @yield('title')</title>
     <meta name="author" content="name" />
     <meta name="description" content="description here" />
     <meta name="keywords" content="keywords,here" />
@@ -42,7 +42,7 @@
             <div class=" flex-grow flex items-center w-auto">
                 <div class="text-xs sm:text-sm flex-grow">
                      <a href="/"
-                        class="inline-block py-1 px-2 text-blue-200 hover:text-white hover:bg-gray-900 rounded mr-2 md:mr-4">
+                        class="inline-block py-1 px-2 text-blue-100 hover:text-white hover:bg-gray-900 rounded mr-2 md:mr-4">
                         صفحه‌ی نخست 
                     </a>
 
