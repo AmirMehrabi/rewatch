@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@1.1.3/dist/css/persian-datepicker.css">
     <link href="{{asset('fontawesome/css/all.css')}}" rel="stylesheet" />
+    <link href=" {{asset('css/circle.css')}}" rel="stylesheet" />
     <link href=" {{asset('css/app.css')}}" rel="stylesheet" />
     <!--Replace with your tailwind.css once created-->
     {{-- <link href="{{asset('css/animate.min.css')}}" rel="stylesheet" /> --}}
@@ -28,7 +29,7 @@
                     <path
                         d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
                 </svg>
-                <span class="font-semibold text-base sm:text-lg md:text-xl tracking-tight mr-1 md:mr-2">کوک</span>
+                <span class="font-semibold text-base sm:text-lg md:text-xl tracking-tight mr-1 md:mr-2">{{config('app.name')}}</span>
             </div>
             <div class="hidden">
                 <button

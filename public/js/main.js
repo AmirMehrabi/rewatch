@@ -1,6 +1,7 @@
         $(document).ready(function () {
 
 
+
             $(".date_input").pDatepicker({
                 "format": "LLLL",
                 "viewMode": "year",

@@ -7,10 +7,21 @@ use App\Birthday;
 use Carbon\Carbon;
 use Jalalian;
 use Auth;
+use App\User;
 use Kavenegar;
 
 class PagesController extends Controller
 {
+
+    public function test(){
+        // return count(User::all());
+        $tomorrow_birthdays = Birthday::whereMonth('birthday_date', '=', date('m'))->whereDay('birthday_date', '=', date('d') +1)->get();
+        
+        foreach ($tomorrow_birthdays as $birthday) {
+            echo $birthday->user->phone;
+        }
+        
+    }
 
 
     public function index()

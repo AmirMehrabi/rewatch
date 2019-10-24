@@ -18404,6 +18404,15 @@ html {
   font-family: IRANSans !important;
 }
 
+.progress {
+  height: 300px;
+}
+
+.progress > svg {
+  height: 100%;
+  display: block;
+}
+
 img,
 video {
   max-width: 100%;
@@ -18695,16 +18704,6 @@ details {
 
 /* Interactive
    ========================================================================== */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -19007,6 +19006,16 @@ textarea {
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 @media (min-width: 640px){

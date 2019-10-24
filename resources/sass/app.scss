@@ -201,3 +201,12 @@ body {
 .datepicker-plot-area {
     font-family: IRANSans !IMPORTANT;
 }
+
+
+.progress {
+    height: 300px;
+}
+.progress > svg {
+    height: 100%;
+    display: block;
+}

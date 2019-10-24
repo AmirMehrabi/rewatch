@@ -83,6 +83,7 @@
                 <div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
                     <div
                         class="group bg-indigo-100 hover:bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col pb-4">
+
                         <div class="text-gray-700 text-center  p-2 pb-0 text-right flex">
                             <a href="#modal-{{$loop->index}}"
                                 class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1 transition-0"><i
@@ -93,6 +94,15 @@
                             </a>
                             <p>&nbsp</p>
                         </div>
+
+                        <div class="c100 p{{$birthday->percent }} small green mb-2">
+                            <span>{{$birthday->countdays($birthday->birthday_date)}} روز</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+
                         <div class="text-gray-700 text-center  px-4">
                             {{-- <img src="images/avatars/1.jpg"
                                 class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
