@@ -41,4 +41,8 @@ class Birthday extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function occasions(){
+        return $this->belongsToMany(Occasion::class);
+    }
 }
