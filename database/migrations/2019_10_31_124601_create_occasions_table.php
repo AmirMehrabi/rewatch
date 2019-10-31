@@ -20,7 +20,7 @@ class CreateOccasionsTable extends Migration
         });
 
         Schema::create('birthday_occasion', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            // $table->bigIncrements('id');
             $table->integer('birthday_id');
             $table->integer('occasion_id');
             $table->timestamps();
