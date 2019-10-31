@@ -15,7 +15,17 @@ class CreateOccasionsTable extends Migration
     {
         Schema::create('occasions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->unique();
             $table->timestamps();
+        });
+
+        Schema::create('birthday_occasion', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('birthday_id');
+            $table->integer('occasion_id');
+            $table->timestamps();
+
+            $table->primary(['birthday_id', 'occasion_id']);
         });
     }
 
@@ -27,5 +37,6 @@ class CreateOccasionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('occasions');
+        Schema::dropIfExists('birthday_occasion');
     }
 }
