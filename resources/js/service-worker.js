@@ -9,7 +9,7 @@ if (workbox) {
 
     // match routes for homepage, blog and any sub-pages of blog
     workbox.routing.registerRoute(
-        /^\/(?:(blog)?(\/.*)?)$/,
+        /^\/(?:(login)?(\/.*)?)$/,
         new workbox.strategies.NetworkFirst({
             cacheName: 'static-resources',
         })
