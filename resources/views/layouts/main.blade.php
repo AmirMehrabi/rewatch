@@ -10,6 +10,7 @@
     <meta name="author" content="name" />
     <meta name="description" content="description here" />
     <meta name="keywords" content="keywords,here" />
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@1.1.3/dist/css/persian-datepicker.css">
     <link href="{{asset('fontawesome/css/all.css')}}" rel="stylesheet" />
