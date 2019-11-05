@@ -36,10 +36,14 @@
                     <input
                         class="text-xs sm:text-sm md:text-base appearance-none bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none"
                         type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
-                    <input
+                        {!! Form::select('occasions[]', $occasions, null, ['class' => 'ml-1 text-xs sm:text-sm md:text-base bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none focus:shadow-none focus:border-none']) !!}
+
+                        <input
                         class="text-xs sm:text-sm md:text-base appearance-none bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none  main-input date_input"
                         id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴"
                         aria-label="Full name">
+
+
                     @if (Auth::check())
                     <button type="submit"
                         class="text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
@@ -78,6 +82,7 @@
             <div class="flex flex-wrap -mx-2">
 
                 @foreach ($birthdays as $birthday)
+
                 <!-- Birthday Card -->
 
                 <div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
@@ -173,7 +178,10 @@
                                 
                                 <input value="{{ $birthday->name }}" class="text-xs mb-6 w-full  mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                                     type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
-                                <input
+                                    {!! Form::select('occasions[]', $occasions, $birthday->occasions, ['class' => 'ml-1 text-xs mb-6 w-full  mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500']) !!}
+                                    {{-- {{$occasions}} --}}
+
+                                    <input
                                     class="text-xs mb-6 w-2/3 mx-auto sm:text-sm md:text-base appearance-none bg-gray-100 border-transparent border rounded-full w-full text-gray-700 mx-4 irsans py-3 px-5 leading-tight focus:outline-none focus:bg-white focus:border-teal-500  main-input date_input"
                                     value="{{ $birthday->birthday_date }}" id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴" aria-label="Full name">
                                 <button type="submit"
@@ -244,7 +252,9 @@
                     <input
                         class="shadow py-2 sm:py-3 items-center bg-gray-200 rounded-lg appearance-none border border-transparent mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
-                    <input
+                        {!! Form::select('occasions[]', $occasions, null, ['multiple' => 'multiple','class' => 'ml-1 shadow py-2 sm:py-3 items-center bg-gray-200 rounded-lg appearance-none border border-transparent mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500']) !!}
+
+                        <input
                         class="shadow py-2 sm:py-3 items-center bg-gray-200 rounded-lg appearance-none border border-transparent mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500  main-input date_input"
                         id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴"
                         aria-label="Full name">

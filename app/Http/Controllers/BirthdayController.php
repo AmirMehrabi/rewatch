@@ -55,6 +55,12 @@ class BirthdayController extends Controller
         $birthday->name = $request->input('name');
         $birthday->birthday_date = $carbon_birth_date;
         $birthday->save();
+        if ($request->has('occasions')) {
+            $birthday->occasions()->attach($request->input('occasions'));
+        }
+
+        // dd($birthday->with('occasions'));
+        
         $request->session()->flash('status', 'تولد مورد نظر، با موفقیت به پروفایل شما افزوده شد');
         return redirect()->back();
     }

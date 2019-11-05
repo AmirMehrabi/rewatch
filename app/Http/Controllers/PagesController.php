@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Jalalian;
 use Auth;
 use App\User;
+use App\Occasion;
 use Kavenegar;
 
 class PagesController extends Controller
@@ -40,8 +41,10 @@ class PagesController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $occasions = Occasion::pluck('name','id');
+        // dd($occasions);
         if ($user) {
-            $birthdays = Birthday::where('user_id', $user->id)->get();
+            $birthdays = Birthday::where('user_id', $user->id)->with('occasions')->get();
         } else {
             $birthdays = [];
         }
@@ -51,7 +54,7 @@ class PagesController extends Controller
             $birthday->percent = round($birthday->remaining / 365 * 100);
         }
 
-        return view('index', compact('birthdays'));
+        return view('index', compact('birthdays', 'occasions'));
     }
 
     public function profile() {
