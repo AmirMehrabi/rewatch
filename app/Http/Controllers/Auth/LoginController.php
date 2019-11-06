@@ -49,7 +49,7 @@ class LoginController extends Controller
 
         $token = LoginToken::where('token', request()->get('token'))->first();
         if (!is_null($token)) {
-            Auth::login($token->user);
+            Auth::login($token->user, true);
             $token->delete();
             return redirect('/');
         } else {
