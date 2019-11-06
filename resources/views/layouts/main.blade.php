@@ -20,7 +20,7 @@
     {{-- <link href="{{asset('css/animate.min.css')}}" rel="stylesheet" /> --}}
 </head>
 
-<body class="font-sans leading-normal tracking-normal">
+<body class="font-sans leading-normal tracking-normal bg-gray-100">
     <div id="app">
             
         <nav class="flex items-center justify-between flex-wrap bg-indigo-600 p-3 irsans">

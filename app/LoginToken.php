@@ -36,19 +36,19 @@ class LoginToken extends Model
             }
         );
 
-        // try {
-        //     $sender = "10004346";
-        //     $message = "کد تائید شما: {$url}";
-        //     $receptor = array("09361103966");
-        //     $result = Kavenegar::Send($sender, $receptor, $message);
-        // } catch (\Kavenegar\Exceptions\ApiException $e) {
-        //     // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-        //     // echo $e->errorMessage();
-        //     return Redirect::back()->withErrors(['error', $e->errorMessage()]);
-        // } catch (\Kavenegar\Exceptions\HttpException $e) {
-        //     // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-        //     return Redirect::back()->withErrors(['error', $e->errorMessage()]);
-        // }
+        try {
+            $sender = "10004346";
+            $message = "کد تائید شما: {$url}";
+            $receptor = $this->user->phone;
+            $result = Kavenegar::Send($sender, $receptor, $message);
+        } catch (\Kavenegar\Exceptions\ApiException $e) {
+            // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+            // echo $e->errorMessage();
+            return Redirect::back()->withErrors(['error', $e->errorMessage()]);
+        } catch (\Kavenegar\Exceptions\HttpException $e) {
+            // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+            return Redirect::back()->withErrors(['error', $e->errorMessage()]);
+        }
     }
 
     public function user()

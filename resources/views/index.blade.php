@@ -6,7 +6,7 @@
 
 <section class="bg-indigo-600">
     <div class="container mx-auto">
-        <div class="hidden md:flex md:flex-row w-full md:w-4/5 md:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
+        <div class="hidden sm:flex sm:flex-row w-full sm:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
             <div class="w-full mb-8">
                 <div class="text-center">
                     <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-white font-semibold">
@@ -63,7 +63,7 @@
     </div>
 </section>
 
-<nav class="flex md:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
+<nav class="flex sm:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
     <div class="w-full  flex-grow flex items-center w-auto">
 
         <div class="inline-block mx-auto sm:ml-0">
@@ -75,8 +75,8 @@
 </nav>
 
 
-<section class="bg-white pt-8">
-    <div class="container mx-auto px-10 md:px-4">
+<section class="pt-8">
+    <div class="container mx-auto px-4">
         <div class="px-2">
 
             <div class="flex flex-wrap -mx-2">
@@ -85,11 +85,11 @@
 
                 <!-- Birthday Card -->
 
-                <div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 md:mb-5 px-2 mb-4 group">
+                <div class="w-full md:w-1/3 lg:w-1/5 md:mb-5 px-2 mb-4 group">
                     <div
-                        class="group bg-indigo-100 hover:bg-white  rounded-lg  p-1 hover:shadow-2xl city-card flex flex-col pb-4">
+                        class="group hover:bg-indigo-100 bg-white rounded md:rounded-lg  p-1 hover:shadow shadow-lg city-card flex flex-col md:pb-4">
 
-                        <div class="text-gray-700 text-center  p-2 pb-0 text-right flex">
+                        <div class="text-gray-700 text-center  p-2 pb-0 text-right hidden md:flex justify-end mb-2 mb-lg-0 md:justify-start">
                             <a href="#modal-{{$loop->index}}"
                                 class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1 transition-0"><i
                                     class="fas fa-ellipsis-h "></i></a>
@@ -100,7 +100,7 @@
                             <p>&nbsp</p>
                         </div>
 
-                        <div class="c100 p{{$birthday->percent }} small green mb-2">
+                        <div class="hidden md:flex c100 p{{$birthday->percent }} small green mb-2">
                             <span>{{$birthday->countdays($birthday->birthday_date)}} روز</span>
                             <div class="slice">
                                 <div class="bar"></div>
@@ -108,17 +108,29 @@
                             </div>
                         </div>
 
-                        <div class="text-gray-700 text-center  px-4">
+                        <div class="text-gray-700 text-center p-1 md:px-4">
                             {{-- <img src="images/avatars/1.jpg"
                                 class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full  flex items-center justify-center mx-auto"
                                 alt=""> --}}
-                                
-                            <p class="text-sm mb-1 md:text-base xl:text-lg font-medium text-black">
-                                {{ $birthday->name}}</p>
-                            <p class="text-xs sm:text-sm mb-1 lg:text-base">{{$birthday->countdays($birthday->birthday_date)}} روز مانده تا سال‌گرد بعدی</p>
-                            <p class="text-xs sm:text-sm mb-1 md:text-base font-light pb-2">
-                                {{ \Morilog\Jalali\Jalalian::forge($birthday->birthday_date)->format('%d %B %Y') }}</p>
-                                
+                                <div class="flex flex-wrap md:flex-col justify-between">
+                                    <p class="flex-grow sm:flex-shrink text-sm md:mb-1 md:text-base xl:text-lg font-medium text-black">
+                                        {{ $birthday->name}}</p>
+                                    <p class="flex-grow sm:flex-shrink text-xs sm:text-sm md:mb-1 lg:text-base">{{$birthday->countdays($birthday->birthday_date)}} روز مانده تا سال‌گرد بعدی</p>
+                                    <p class="flex-grow sm:flex-shrink text-xs sm:text-sm md:mb-1 md:text-base font-light md:pb-2">
+                                        {{ \Morilog\Jalali\Jalalian::forge($birthday->birthday_date)->format('%d %B %Y') }}</p>
+                                        
+                                        <div class="flex-grow sm:flex-shrink text-gray-700 text-center justify-center text-right flex md:hidden">
+                                            <a href="#modal-{{$loop->index}}"
+                                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-gray-500 rounded-full p-1 transition-0"><i
+                                                    class="fas fa-ellipsis-h "></i></a>
+                                            <a href="#modal-delete-{{$loop->index}}"
+                                                class="inline-flex lg:hidden h-full group-hover:inline-flex items-center content-center justify-center text-gray-500 hover:text-white hover:bg-red-500 rounded-full p-1 transition-0">
+                                            <i class="fas fa-trash"></i>
+                                            </a>
+                                            <p>&nbsp</p>
+                                        </div>
+                                </div>
+
                         </div>
                     </div>
                 </div>
