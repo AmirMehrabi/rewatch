@@ -44,11 +44,15 @@ class Kernel extends ConsoleKernel
                         $occasions = array();
                         foreach($birthday->occasions as $occasion) {
                          $occasions[] = $occasion->name;
+                         
                         }
+                        $occasions = implode(" و ",$occasions);
+                        // var_dump($occasions);
                         try {
                             $sender = "10004346";
-                            $message = "فردا تولد {$birthday->name} است. فراموشتان نشود.";
+                            $message = "فردا سالگرد {$occasions} {$birthday->name} است. فراموشتان نشود.";
                             $receptor = array($birthday->user->phone);
+            
                             $result = Kavenegar::Send($sender, $receptor, $message);
                         } catch (\Kavenegar\Exceptions\ApiException $e) {
                             // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
