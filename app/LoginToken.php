@@ -25,8 +25,8 @@ class LoginToken extends Model
         $lastAttempt = DB::table('login_tokens')->where('user_id','=',$user->id)->first();
         
         if (!empty($lastAttempt)) {
-            if (Carbon::now()->diffInMinutes($lastAttempt->created_at) < 15) {
-                return Redirect::back()->withErrors([Carbon::now()->diffInMinutes($lastAttempt->created_at), 'کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
+            if (Carbon::now()->diffInMinutes($lastAttempt->created_at) < 5) {
+                return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
             } else {
                 return LoginToken::where('user_id', '=', $user->id)->first();
             }
