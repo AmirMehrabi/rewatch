@@ -16,14 +16,24 @@ class PagesController extends Controller
 
     public function test(){
         // return count(User::all());
+
         $tomorrow_birthdays = Birthday::whereMonth('birthday_date', '=', date('m'))->whereDay('birthday_date', '=', date('d') +1)->get();
-        
+        // dd($tomorrow_birthdays);
+
         foreach ($tomorrow_birthdays as $birthday) {
             // echo $birthday->user->phone;
+            $occasions = array();
+            foreach($birthday->occasions as $occasion) {
+             $occasions[] = $occasion->name;
+             
+            }
+            $occasions = implode(" و ",$occasions);
+            // var_dump($occasions);
             try {
                 $sender = "10004346";
-                $message = "فردا تولد {$birthday->name} است. فراموشتان نشود.";
+                $message = "فردا سالگرد {$occasions} {$birthday->name} است. فراموشتان نشود.";
                 $receptor = array($birthday->user->phone);
+
                 $result = Kavenegar::Send($sender, $receptor, $message);
             } catch (\Kavenegar\Exceptions\ApiException $e) {
                 // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد

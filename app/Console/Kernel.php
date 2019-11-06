@@ -4,6 +4,13 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Birthday;
+use Carbon\Carbon;
+use Jalalian;
+use Auth;
+use App\User;
+use App\Occasion;
+use Kavenegar;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +31,35 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('inspire')
+                 ->everyMinute();
+                 
+                 $schedule->call(function () {
+
+                    $tomorrow_birthdays = Birthday::whereMonth('birthday_date', '=', date('m'))->whereDay('birthday_date', '=', date('d') +1)->get();
+                    // dd($tomorrow_birthdays);
+            
+                    foreach ($tomorrow_birthdays as $birthday) {
+                        // echo $birthday->user->phone;
+                        $occasions = array();
+                        foreach($birthday->occasions as $occasion) {
+                         $occasions[] = $occasion->name;
+                        }
+                        try {
+                            $sender = "10004346";
+                            $message = "فردا تولد {$birthday->name} است. فراموشتان نشود.";
+                            $receptor = array($birthday->user->phone);
+                            $result = Kavenegar::Send($sender, $receptor, $message);
+                        } catch (\Kavenegar\Exceptions\ApiException $e) {
+                            // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+                            // echo $e->errorMessage();
+                            return Redirect::back()->withErrors(['error', $e->errorMessage()]);
+                        } catch (\Kavenegar\Exceptions\HttpException $e) {
+                            // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+                            return Redirect::back()->withErrors(['error', $e->errorMessage()]);
+                        }
+                    }
+                })->dailyAt('13:00');
     }
 
     /**
