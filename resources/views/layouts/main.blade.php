@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{config('app.name')}} | @yield('title')</title>
     <meta name="author" content="امیرمسعود مهرابیان" />
-    <meta name="description" content="description here" />
-    <meta name="keywords" content="keywords,here" />
+    <meta name="description" content="دیگر سالگردهای مهم را فراموش نکنید" />
+    <meta name="keywords" content="یادآور,سالگرد,سال‌گرد,تولد" />
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@1.1.3/dist/css/persian-datepicker.css">
