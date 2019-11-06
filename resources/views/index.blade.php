@@ -211,17 +211,14 @@
             {{-- Birthday boy flex row --}}
             <div class="flex flex-wrap -mx-2">
                 <!-- Birthday Boy! -->
-                <div class="w-4/5 md:w-3/5 lg:w-2/5 mx-auto px-2 mb-4 ">
-                    <div class="bg-indigo-400 rounded-lg p-1 hover:shadow-2xl city-card flex flex-col">
+                <div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-2 mb-4 ">
+                    <div class="bg-white rounded-lg p-1 shadow-xl hover:shadow-2xl city-card flex flex-col">
+                        <div class="flex flex-row  items-center justify-center">
 
-                        <div class="text-white">
-                            <div class="flex flex-row  items-center justify-center">
-
-                                <div class="text-white text-center m-2 w-4/5  xl:w-auto">
-                                    <h1 class="text-base sm:text-lg md:text-xl font-light text-white lg:text-right">
-                                    شما در حال حاضر سال‌گرد ثبت‌شده‌ای ندارید. برای ثبت سال‌گرد جدید <a href="{{Auth::check() ? '#modal-birthday' : '#modal-login'}}" class="text-sm px-2 leading-none  rounded bg-blue-100 border-transparent text-gray text-blue-400 border border-transparent hover:bg-blue-300 hover:text-white">اینجا</a> کلیک کنید.
-                                    </h1>
-                                </div>
+                            <div class="text-gray-700 m-2">
+                                <h1 class="text-sm lg:text-base font-light text-center lg:text-right">
+                                شما در حال حاضر سال‌گرد ثبت‌شده‌ای ندارید. برای ثبت سال‌گرد جدید <a href="{{Auth::check() ? '#modal-birthday' : '#modal-login'}}" class="text-sm px-2 leading-none  rounded bg-blue-100 border-transparent text-gray text-blue-400 border border-transparent hover:bg-blue-300 hover:text-white">اینجا</a> کلیک کنید.
+                                </h1>
                             </div>
                         </div>
                     </div>

@@ -80,7 +80,7 @@
 
 
 
-        <footer class="bg-gray-700 p-5 border-t shadow-xl text-white mt-20">
+        <footer class="bg-gray-700 p-5 border-t text-sm text-white mt-20">
             <p>آزاد و متن‌باز - توسعه داده شده با لاراول</p>
         </footer>
 
