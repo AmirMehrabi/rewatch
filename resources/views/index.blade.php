@@ -6,10 +6,10 @@
 
 <section class="bg-indigo-600">
     <div class="container mx-auto">
-        <div class="hidden sm:flex sm:flex-row w-full sm:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
+        <div class="flex flex-col sm:flex-row w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
             <div class="w-full mb-8">
                 <div class="text-center">
-                    <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-white font-semibold">
+                    <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-4 sm:py-8 text-white font-semibold">
                         دیگر سالگردهای مهم را فراموش نکنید.
                         <span class="text-xs sm:text-sm md:text-base font-light">ما شما را مطلع خواهیم کرد.</span>
                     </p>
@@ -32,26 +32,26 @@
                     </div>
                 @enderror
                 <div
-                    class="flex shadow-xl py-1 sm:py-3 md:py-4 items-center bg-white rounded-lg appearance-none border border-gray-200 mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+                    class="flex flex-col sm:flex-row shadow-xl py-3 md:py-4 items-center bg-white rounded-lg appearance-none border border-gray-200 mb-6 rounded w-full px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
                     <input
-                        class="text-xs sm:text-sm md:text-base appearance-none bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none"
+                        class="text-xs mb-2 sm:mb-0 md:text-sm appearance-none bg-transparent border-none w-full text-gray-700 sm:mx-2 irsans p-2 leading-tight focus:outline-none"
                         type="text" name="name" placeholder="امیر مهرابیان ..." aria-label="Full name">
-                        {!! Form::select('occasions[]', $occasions, null, ['class' => 'ml-1 text-xs sm:text-sm md:text-base bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none focus:shadow-none focus:border-none']) !!}
+                        {!! Form::select('occasions[]', $occasions, null, ['class' => 'text-xs mb-2 sm:mb-0 md:text-sm bg-transparent border-none w-full text-gray-700 sm:mx-2 irsans p-2 leading-tight focus:outline-none focus:shadow-none focus:border-none']) !!}
 
                         <input
-                        class="text-xs sm:text-sm md:text-base appearance-none bg-transparent border-none w-full text-gray-700 mr-3 irsans py-1 px-2 leading-tight focus:outline-none  main-input date_input"
+                        class="text-xs mb-2 sm:mb-0 md:text-sm appearance-none bg-transparent border-none w-full text-gray-700 sm:mx-2 irsans p-2 leading-tight focus:outline-none  main-input date_input"
                         id="date_input" type="text" name="birthday_date" placeholder="۱۸/۰۶/۱۳۷۴"
                         aria-label="Full name">
 
 
                     @if (Auth::check())
                     <button type="submit"
-                        class="text-xs shadow-2xl rounded-full sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white py-1 px-2 rounded">
+                        class="text-xs shadow-2xl rounded-full flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white p-2 rounded">
                         ذخیره
                     </button>
                     @else
                     <a href="#modal-login"
-                        class="text-xs sm:text-sm flex-shrink-0 irsans py-2 px-4 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 border-4 text-white py-1 px-2 rounded">ورود</a>
+                        class="text-xs w-full sm:w-auto text-center flex-shrink-0 irsans py-2 px-4 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 border-4 text-white p-2 rounded">ورود</a>
                     @endif
 
                 </div>
@@ -63,16 +63,7 @@
     </div>
 </section>
 
-<nav class="flex sm:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
-    <div class="w-full  flex-grow flex items-center w-auto">
 
-        <div class="inline-block mx-auto sm:ml-0">
-            <a href="#modal-birthday"
-                class=" text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
-                    class="fas fa-plus    "></i> افزودن سالگرد</a>
-        </div>
-    </div>
-</nav>
 
 
 <section class="pt-8">
