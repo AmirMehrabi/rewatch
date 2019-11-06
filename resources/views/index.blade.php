@@ -4,12 +4,12 @@
     
 @section('content')
 
-<section class="bg-blue-100">
+<section class="bg-indigo-600">
     <div class="container mx-auto">
-        <div class="hidden lg:flex lg:flex-row w-full md:w-4/5 lg:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
+        <div class="hidden md:flex md:flex-row w-full md:w-4/5 md:w-2/3 xl:w-2/4 mx-auto items-center content-end  py-8">
             <div class="w-full mb-8">
                 <div class="text-center">
-                    <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-gray-700 font-semibold">
+                    <p class="text-base sm:text-lg md:text-xl xl:text-2xl py-8 text-white font-semibold">
                         دیگر سالگردهای مهم را فراموش نکنید.
                         <span class="text-xs sm:text-sm md:text-base font-light">ما شما را مطلع خواهیم کرد.</span>
                     </p>
@@ -63,10 +63,10 @@
     </div>
 </section>
 
-<nav class="flex lg:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
+<nav class="flex md:hidden items-center justify-between flex-wrap bg-gray-100 p-5 irsans ">
     <div class="w-full  flex-grow flex items-center w-auto">
 
-        <div class="inline-block mr-auto">
+        <div class="inline-block mx-auto sm:ml-0">
             <a href="#modal-birthday"
                 class=" text-sm px-4 py-2 leading-none  rounded  text-blue-500 hover:bg-blue border-blue-400 hover:bg-blue-100 hover:border-transparent hover:text-gray hover:text-blue-400 hover:bg-blue-100"><i
                     class="fas fa-plus    "></i> افزودن سالگرد</a>

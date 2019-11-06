@@ -23,7 +23,7 @@
 <body class="font-sans leading-normal tracking-normal">
     <div id="app">
             
-        <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-3 irsans">
+        <nav class="flex items-center justify-between flex-wrap bg-indigo-600 p-3 irsans">
             <div class="flex items-center flex-shrink-0 text-white sm:mx-1 md:mx-6">
                 <svg class="fill-current h-6 w-6 md:h-8 md:w-8 md:mr-2" width="54" height="54" viewBox="0 0 54 54"
                     xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@
                 <button
                     class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
+                        <title>منو</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                     </svg>
                 </button>
@@ -44,7 +44,7 @@
             <div class=" flex-grow flex items-center w-auto">
                 <div class="text-xs sm:text-sm flex-grow">
                      <a href="/"
-                        class="inline-block py-1 px-2 text-blue-100 hover:text-white hover:bg-gray-900 rounded mr-2 md:mr-4">
+                        class="inline-block py-1 px-2 text-blue-100 hover:text-white hover:bg-indigo-500 rounded mr-2 md:mr-4">
                         صفحه‌ی نخست 
                     </a>
 
