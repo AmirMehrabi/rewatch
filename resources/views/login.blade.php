@@ -17,7 +17,16 @@
                         <p class="text-lg">بیایید شروع کنیم</p>
                         <p class="text-xs text-gray-500">شماره تلفن شما را با هیچکس به اشتراک نمی‌گذاریم.</p>
                     </div>
+                    @foreach ($errors->all() as $error)
 
+                    <div class="bg-red-100 mb-4 border border-red-400 irsans text-xs text-red-700 px-3 py-2 rounded relative" role="alert">
+                        <strong class="font-bold">متاًسفیم</strong>
+                        <span class="block sm:inline">{{$error}}</span>
+                    </div>  
+                  
+                  @endforeach
+
+                    
                                 @error('phone')
                                 <div class="mb-4">
                                     <span class="invalid-feedback text-sm mb-4 irsans text-red-700" role="alert">
