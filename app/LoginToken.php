@@ -26,7 +26,7 @@ class LoginToken extends Model
         
         if (!empty($lastAttempt)) {
             if (Carbon::now()->diffInMinutes($lastAttempt->updated_at) < 5) {
-                return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
+                return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلی شما می‌گذرد']);
             } else {
                 $lastAttempt->touch();
                 return LoginToken::where('user_id', '=', $user->id)->first();
