@@ -326,9 +326,7 @@
                 {!! Form::close() !!}
             </div>
         </div>
-        <footer>
-            <!-- Footer -->
-        </footer>
+
     </div>
 
     <a href="#!" class="modal-close" title="بستن این پنجره" data-close="بستن" data-dismiss="modal">?</a>
