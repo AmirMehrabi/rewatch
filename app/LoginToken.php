@@ -22,12 +22,13 @@ class LoginToken extends Model
 
     public static function generateFor(user $user)
     {
-        $lastAttempt = DB::table('login_tokens')->where('user_id','=',$user->id)->first();
+        $lastAttempt = LoginToken::where('user_id', '=', $user->id)->first();
         
         if (!empty($lastAttempt)) {
-            if (Carbon::now()->diffInMinutes($lastAttempt->created_at) < 5) {
+            if (Carbon::now()->diffInMinutes($lastAttempt->updated_at) < 5) {
                 return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
             } else {
+                $lastAttempt->touch();
                 return LoginToken::where('user_id', '=', $user->id)->first();
             }
         } else {
@@ -41,6 +42,7 @@ class LoginToken extends Model
 
     public function send()
     {
+        
         $url = $this->token;
         Mail::raw(
             "<a href='{$url}'> {$url} </a>",

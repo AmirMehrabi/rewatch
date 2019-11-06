@@ -45,20 +45,20 @@ class PagesController extends Controller
         //         return Redirect::back()->withErrors(['error', $e->errorMessage()]);
         //     }
         // }
-        $lastAttempt = DB::table('login_tokens')->where('user_id', '=', 1)->first();
+        // $lastAttempt = DB::table('login_tokens')->where('user_id', '=', 1)->first();
         
-        if (!empty($lastAttempt)) {
-            if (Carbon::now()->diffInMinutes($lastAttempt->created_at) > 15) {
-                return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
-            } else {
-                return LoginToken::where('user_id', '=', $user->id)->first();
-            }
-        } else {
-            return static::create([
-                'user_id' => $user->id,
-                'token' => mt_rand(10000, 99999)
-            ]);
-        }
+        // if (!empty($lastAttempt)) {
+        //     if (Carbon::now()->diffInMinutes($lastAttempt->created_at) > 15) {
+        //         return Redirect::back()->withErrors(['کمتر از ۵ دقیقه از تلاش قبلش شما می‌گذرد']);
+        //     } else {
+        //         return LoginToken::where('user_id', '=', $user->id)->first();
+        //     }
+        // } else {
+        //     return static::create([
+        //         'user_id' => $user->id,
+        //         'token' => mt_rand(10000, 99999)
+        //     ]);
+        // }
     }
 
 

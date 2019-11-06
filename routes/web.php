@@ -19,7 +19,7 @@ Route::get('/profile', 'PagesController@profile')->middleware('auth');
 
 Route::post('/profile/update', 'PagesController@updateProfile')->middleware('auth')->name('profile.update');
 
-Route::get('/test', 'PagesController@test');
+// Route::get('/test', 'PagesController@test');
 
 // Auth::routes();
 
