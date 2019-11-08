@@ -46,7 +46,7 @@
 
                     @if (Auth::check())
                     <button type="submit"
-                        class="text-xs shadow-2xl rounded-full flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white p-2 rounded">
+                        class="text-xs sm:w-auto text-center shadow-2xl rounded-full flex-shrink-0 irsans py-2 px-4 bg-red-600 hover:bg-red-500 border-transparent hover:border-red-500 border-4 text-white p-2 rounded">
                         ذخیره
                     </button>
                     @else

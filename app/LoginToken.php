@@ -53,9 +53,10 @@ class LoginToken extends Model
 
         try {
             $sender = "10004346";
-            $message = "کد تائید شما: {$url}";
+            $message = $url;
             $receptor = $this->user->phone;
-            $result = Kavenegar::Send($sender, $receptor, $message);
+            // $result = Kavenegar::Send($sender, $receptor, $message);
+            $result = Kavenegar::VerifyLookup($receptor, $message, null, null, 'verify');
         } catch (\Kavenegar\Exceptions\ApiException $e) {
             // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
             // echo $e->errorMessage();
