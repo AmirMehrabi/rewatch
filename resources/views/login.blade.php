@@ -12,7 +12,7 @@
             <div class="w-full max-w-sm mx-auto">
                 <form method="POST" class="bg-white shadow-2xl rounded-lg px-8 pt-6 pb-8 mb-4 border-t-4 border-teal-400">
                     {{csrf_field()}}
-                    <img src="images/character.jpg" class="w-3/4 mx-auto pb-6" alt="">
+                    <img src="{{asset('images/character.jpg')}}" class="w-3/4 mx-auto pb-6" alt="">
                     <div class="text-center mb-4">
                         <p class="text-lg">بیایید شروع کنیم</p>
                         <p class="text-xs text-gray-500">شماره تلفن شما را با هیچکس به اشتراک نمی‌گذاریم.</p>
